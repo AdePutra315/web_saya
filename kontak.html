@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ade Putra - Web Pribadi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Sidebar styling */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #1f2937;
+            color: white;
+            z-index: 100;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar ul {
+            padding: 1rem;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        #sidebar ul li {
+            margin: 1rem 0;
+        }
+
+        #sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        #sidebar ul li a:hover {
+            color: #e5e7eb;
+        }
+
+        /* Navbar styling */
+        #hamburger {
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        #nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f2937;
+            padding: 1rem 2rem;
+        }
+
+        #nav-bar a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav-bar a:hover {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+
+        /* Navbar Background Color */
+        .bg-blue-navbar {
+            background-color: #1E3A8A; /* Deep blue background */
+        }
+
+        /* Mobile view - Sidebar and navbar adjustments */
+        @media (max-width: 1024px) {
+            #hamburger {
+                display: block;
+            }
+            #nav-bar .desktop-nav {
+                display: none;
+            }
+            /* Sidebar */
+            #sidebar {
+                transform: translateX(-100%); /* Initially hidden */
+            }
+        }
+
+        /* Desktop view - Sidebar hidden */
+        @media (min-width: 1024px) {
+            #sidebar {
+                display: none;
+            }
+            #hamburger {
+                display: none;
+            }
+        }
+
+        /* Bagian Section */
+        section {
+            min-height: 100vh; /* Tinggi penuh layar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            background: linear-gradient(to bottom, #1f2937, #111827); /* Gradient dark background */
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        /* Overlay */
+        section .absolute {
+            z-index: -1; /* Membuat overlay di bawah konten */
+        }
+
+        /* Gambar Profil */
+        section img {
+            width: 10rem; /* Ukuran gambar profil */
+            height: 10rem;
+            border-radius: 50%; /* Membuat gambar bulat */
+            border: 4px solid #ffffff; /* Border putih */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow halus */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Efek transisi pada hover */
+        }
+
+        section img:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Shadow lebih besar saat hover */
+        }
+
+        /* Judul */
+        section h2 {
+            font-size: 3rem; /* Ukuran font judul */
+            font-weight: 800;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Shadow halus pada teks */
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Paragraf */
+        section p {
+            font-size: 1.25rem; /* Ukuran font paragraf */
+            line-height: 1.75rem;
+            color: #d1d5db; /* Warna teks abu-abu terang */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Shadow ringan pada teks */
+            margin: 0 auto;
+            max-width: 35rem; /* Lebar maksimal untuk teks */
+        }
+
+        /* Efek Responsif */
+        @media (min-width: 768px) {
+            section h2 {
+                font-size: 4rem; /* Ukuran font judul untuk layar lebih besar */
+            }
+
+            section p {
+                font-size: 1.5rem; /* Ukuran font paragraf lebih besar di layar lebar */
+                line-height: 2rem;
+            }
+        }
+
+        /* Adjusting layout in different orientations */
+        @media (orientation: landscape) {
+            section {
+                padding: 2rem; /* Ruang tambahan untuk mode landscape */
+            }
+        }
+
+        @media (orientation: portrait) {
+            section {
+                padding: 1rem; /* Ruang lebih kecil untuk mode portrait */
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-gray-800">
+        <div class="flex justify-between items-center p-4 bg-red-600 text-white">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="close-sidebar" class="text-3xl">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html" class="block">Home</a></li>
+            <li><a href="tentang.html" class="block">Tentang</a></li>
+            <li><a href="layanan.html" class="block">Layanan</a></li>
+            <li><a href="kontak.html" class="block">Kontak</a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar -->
+    <div id="nav-bar" class="flex justify-between items-center bg-blue-navbar p-4 shadow-lg">
+        <!-- Hamburger button for mobile -->
+        <button id="hamburger" class="md:hidden text-white text-3xl hover:text-yellow-300 transition-colors duration-300">&#9776;</button>
+        
+        <!-- Teks yang ada di tengah -->
+        <a href="#" class="text-white text-3xl font-bold uppercase mx-auto transform hover:scale-110 transition-all duration-300">
+            <marquee behavior="scroll" direction="left">Selamat datang di Dunia Digital Ade Putra - Website Pribadi</marquee>
+        </a>
+        
+        <!-- Navbar links for desktop (hidden on mobile) -->
+        <div class="desktop-nav hidden md:flex md:items-center md:space-x-6">
+            <a href="index.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Home</a>
+            <a href="tentang.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Tentang</a>
+            <a href="layanan.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Layanan</a>
+            <a href="kontak.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Kontak</a>
+        </div>
+    </div>
+
+    <section>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    
+        <!-- Konten -->
+        <div class="relative flex flex-col items-center z-10">
+            <h2 class="text-5xl font-extrabold text-white text-shadow-lg mb-6">
+                Kontak
+            </h2>
+            <p class="text-xl leading-relaxed text-gray-200 max-w-3xl mx-auto mb-8">
+                Hubungi saya melalui salah satu platform berikut. Saya senang mendengar kabar dari Anda!
+            </p>
+    
+            <!-- Ikon Media Sosial -->
+            <div class="flex justify-center space-x-8 mb-8">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/085348660885" class="hover:scale-110 transform transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/WhatsApp_logo.svg" alt="WhatsApp" class="w-16 h-16 p-3 rounded-full bg-green-500 hover:bg-green-600 shadow-lg border-4 border-white transition-colors duration-500">
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/adeputra_1312" class="hover:scale-110 transform transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram" class="w-16 h-16 p-3 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-700 hover:via-red-700 hover:to-yellow-700 shadow-lg transition-colors duration-500">
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/adeputra" class="hover:scale-110 transform transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-16 h-16 p-3 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-colors duration-500">
+                </a>
+                <!-- Email -->
+                <a href="mailto:adep72015@example.com" class="hover:scale-110 transform transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Envelopes_logo.svg" alt="Email" class="w-16 h-16 p-3 rounded-full bg-gray-700 hover:bg-gray-800 shadow-lg transition-colors duration-500">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 fixed bottom-0 w-full">
+        <p>&copy; 2025 Ade Putra. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        // Menampilkan sidebar
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('sidebar').style.transform = 'translateX(0)';
+        });
+
+        // Menutup sidebar
+        document.getElementById('close-sidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').style.transform = 'translateX(-100%)';
+        });
+    </script>
+</body>
+</html>

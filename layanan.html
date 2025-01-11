@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ade Putra - Web Pribadi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+                body {
+            background-image: url('12.jpeg'); /* Ganti dengan URL gambar Anda */
+            background-size: cover; /* Menyesuaikan ukuran gambar dengan layar */
+            background-position: center; /* Menempatkan gambar di tengah */
+            background-attachment: fixed; /* Membuat gambar latar belakang tetap saat scroll */
+            background-repeat: no-repeat; /* Agar gambar tidak terulang */
+            height: 100vh; /* Mengatur tinggi untuk mengambil seluruh tinggi layar */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Sidebar styling */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #1f2937;
+            color: white;
+            z-index: 100;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar ul {
+            padding: 1rem;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        #sidebar ul li {
+            margin: 1rem 0;
+        }
+
+        #sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        #sidebar ul li a:hover {
+            color: #e5e7eb;
+        }
+
+        /* Navbar styling */
+        #hamburger {
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        #nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f2937;
+            padding: 1rem 2rem;
+        }
+
+        #nav-bar a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav-bar a:hover {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+
+        /* Navbar Background Color */
+        .bg-blue-navbar {
+            background-color: #1E3A8A; /* Deep blue background */
+        }
+
+        /* Mobile view - Sidebar and navbar adjustments */
+        @media (max-width: 1024px) {
+            #hamburger {
+                display: block;
+            }
+            #nav-bar .desktop-nav {
+                display: none;
+            }
+            /* Sidebar */
+            #sidebar {
+                transform: translateX(-100%); /* Initially hidden */
+            }
+        }
+
+        /* Desktop view - Sidebar hidden */
+        @media (min-width: 1024px) {
+            #sidebar {
+                display: none;
+            }
+            #hamburger {
+                display: none;
+            }
+        }
+
+        /* Tambahan untuk efek teks */
+.text-shadow-lg {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.drop-shadow-lg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Efek Hover */
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+/* Animasi transisi */
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Gradien untuk latar belakang */
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, #4299e1, #9f7aea, #ed64a6);
+}
+
+
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-gray-800">
+        <div class="flex justify-between items-center p-4 bg-red-600 text-white">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="close-sidebar" class="text-3xl">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html" class="block">Home</a></li>
+            <li><a href="tentang.html" class="block">Tentang</a></li>
+            <li><a href="layanan.html" class="block">Layanan</a></li>
+            <li><a href="kontak.html" class="block">Kontak</a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar -->
+    <div id="nav-bar" class="flex justify-between items-center bg-blue-navbar p-4 shadow-lg">
+        <!-- Hamburger button for mobile -->
+        <button id="hamburger" class="md:hidden text-white text-3xl hover:text-yellow-300 transition-colors duration-300">&#9776;</button>
+        
+        <!-- Teks yang ada di tengah -->
+        <a href="#" class="text-white text-3xl font-bold uppercase mx-auto transform hover:scale-110 transition-all duration-300">
+            <marquee behavior="scroll" direction="left">Selamat datang di Dunia Digital Ade Putra - Website Pribadi</marquee>
+        </a>
+        
+        <!-- Navbar links for desktop (hidden on mobile) -->
+        <div class="desktop-nav hidden md:flex md:items-center md:space-x-6">
+            <a href="index.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Home</a>
+            <a href="tentang.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Tentang</a>
+            <a href="layanan.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Layanan</a>
+            <a href="kontak.html" class="text-white hover:text-gray-300 px-4 py-2 transition-colors duration-300">Kontak</a>
+        </div>
+    </div>
+
+    <section class="p-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 relative">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+        <!-- Content -->
+        <div class="relative flex flex-col justify-center items-center text-white z-10">
+            <!-- Foto Profil -->
+            <div class="mb-6">
+                <img src="13.jpg" alt="Foto Profil Ade Putra" class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-xl hover:scale-105 transition-transform duration-300">
+            </div>
+            
+            <!-- Teks -->
+            <h2 class="text-4xl font-extrabold text-shadow-lg mb-4 drop-shadow-lg">
+                Layanan Profesional dari Ade Putra
+            </h2>
+            <p class="mt-2 text-xl leading-relaxed text-shadow-md max-w-2xl mx-auto">
+                Saya menawarkan berbagai layanan berkualitas tinggi, mulai dari pengembangan website, desain UI/UX, hingga konsultasi teknologi untuk kebutuhan bisnis Anda.
+            </p>
+            <p class="mt-4 text-xl leading-relaxed text-shadow-md max-w-2xl mx-auto">
+                Dengan pendekatan kreatif dan berorientasi pada solusi, saya siap membantu Anda mencapai tujuan digital yang Anda impikan. Mari mulai perjalanan ini bersama!
+            </p>
+    
+            <!-- Tombol -->
+            <div class="mt-6">
+                <a href="#services" class="bg-white text-purple-600 px-6 py-3 rounded-full font-bold shadow-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
+                    Jelajahi Layanan Kami
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 fixed bottom-0 w-full">
+        <p>&copy; 2025 Ade Putra. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        // Menampilkan sidebar
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('sidebar').style.transform = 'translateX(0)';
+        });
+
+        // Menutup sidebar
+        document.getElementById('close-sidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').style.transform = 'translateX(-100%)';
+        });
+    </script>
+</body>
+</html>
