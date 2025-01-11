@@ -212,12 +212,11 @@
         </div>
     </div>
 
-    <section>
+    <section class="relative min-h-screen">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     
-        <!-- Konten -->
-        <div class="relative flex flex-col items-center z-10">
+        <div class="relative flex flex-col items-center justify-center z-10 min-h-screen text-center">
             <h2 class="text-5xl font-extrabold text-white text-shadow-lg mb-6">
                 Kontak
             </h2>
@@ -225,45 +224,31 @@
                 Hubungi saya melalui salah satu platform berikut. Saya senang mendengar kabar dari Anda!
             </p>
     
-           <div class="relative flex flex-col items-center z-10">
-    <h2 class="text-5xl font-extrabold text-white text-shadow-lg mb-6">
-        Kontak
-    </h2>
-    <p class="text-xl leading-relaxed text-gray-200 max-w-3xl mx-auto mb-8 text-center">
-        Hubungi saya melalui salah satu platform berikut. Saya senang mendengar kabar dari Anda!
-    </p>
-
-    <!-- Ikon Media Sosial -->
-    <div class="flex justify-center space-x-10 mb-8">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/6285348660885" class="transform transition-transform duration-300 ease-in-out group">
-            <div class="w-20 h-20 p-4 rounded-full bg-green-500 group-hover:bg-green-600 shadow-lg border-4 border-white flex items-center justify-center relative">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/WhatsApp_logo.svg" alt="WhatsApp" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+            <!-- Ikon Media Sosial -->
+            <div class="flex flex-wrap justify-center space-x-10 mb-8">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6285348660885" class="transform transition-transform duration-300 ease-in-out group mb-4 sm:mb-0">
+                    <div class="w-20 h-20 p-4 rounded-full bg-green-500 group-hover:bg-green-600 shadow-lg border-4 border-white flex items-center justify-center relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/WhatsApp_logo.svg" alt="WhatsApp" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/adeputra_1312" class="transform transition-transform duration-300 ease-in-out group mb-4 sm:mb-0">
+                    <div class="w-20 h-20 p-4 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 group-hover:from-pink-700 group-hover:via-red-700 group-hover:to-yellow-700 shadow-lg border-4 border-white flex items-center justify-center relative overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-40 transition-all duration-300"></div>
+                    </div>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/100080009184036" target="_blank" class="transform transition-transform duration-300 ease-in-out group mb-4 sm:mb-0">
+                    <div class="w-20 h-20 p-4 rounded-full bg-green-500 group-hover:bg-green-600 shadow-lg border-4 border-white flex items-center justify-center relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                </a>
             </div>
-        </a>
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/adeputra_1312" class="transform transition-transform duration-300 ease-in-out group">
-            <div class="w-20 h-20 p-4 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 group-hover:from-pink-700 group-hover:via-red-700 group-hover:to-yellow-700 shadow-lg border-4 border-white flex items-center justify-center relative overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-40 transition-all duration-300"></div>
-            </div>
-        </a>
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/adeputra" target="_blank" class="transform transition-transform duration-300 ease-in-out group">
-            <div class="w-20 h-20 p-4 rounded-full bg-green-500 group-hover:bg-green-600 shadow-lg border-4 border-white flex items-center justify-center relative">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            </div>
-        </a>
-        <!-- Email -->
-        <a href="mailto:adep72015@example.com" class="transform transition-transform duration-300 ease-in-out group">
-            <div class="w-20 h-20 p-4 rounded-full bg-gray-700 group-hover:bg-gray-800 shadow-lg border-4 border-white flex items-center justify-center relative">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Envelopes_logo.svg" alt="Email" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            </div>
-        </a>
-    </div>
-</div>
+        </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center p-4 fixed bottom-0 w-full">
         <p>&copy; 2025 Ade Putra. Semua hak cipta dilindungi.</p>
